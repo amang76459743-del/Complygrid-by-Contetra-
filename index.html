@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMPLYGRID by Contetra - India Statutory Compliance & Business Tasks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Minimal & Aesthetic Full-Screen Login Page (Antigravity Theme) -->
+  <div id="view-login" class="login-view-overlay active">
+    <!-- Antigravity Interactive Ring Particle Canvas Background -->
+    <canvas id="login-particle-canvas"></canvas>
+
+    <div class="login-split-container">
+      <!-- Left Hero Column -->
+      <div class="login-hero-side">
+        <div class="login-brand-header">
+          <div class="login-brand-badge">
+            <div class="brand-logo-row" style="gap: 10px;">
+              <svg class="brand-shield" viewBox="0 0 24 24" fill="none" stroke="#0047FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 30px; height: 30px;">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              <div>
+                <span class="login-brand-title">COMPLYGRID</span>
+                <span class="login-brand-by">by Contetra</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="login-hero-content">
+          <h1 class="login-hero-headline">Every Indian<br>statutory<br>due date. One grid.</h1>
+          <p class="login-hero-description">
+            GST, TDS/TCS, Income Tax, ROC/MCA, PF/ESI and Labour filings &mdash; with prep targets, review targets, assignment, TAT tracking and delay attribution.
+          </p>
+
+          <!-- 3 Metrics Box -->
+          <div class="login-metrics-grid">
+            <div class="login-metric-item">
+              <div class="login-metric-num">50+</div>
+              <div class="login-metric-label">STATUTORY ITEMS</div>
+            </div>
+            <div class="login-metric-item">
+              <div class="login-metric-num">6</div>
+              <div class="login-metric-label">REGULATORS</div>
+            </div>
+            <div class="login-metric-item">
+              <div class="login-metric-num">Live</div>
+              <div class="login-metric-label">TAT TRACKING</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aesthetically Prominent Contetra Developer Branding Badge -->
+        <div class="login-footer-brand-badge">
+          <div style="font-size: 9px; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">POWERED BY DEVELOPER</div>
+          <div style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); padding: 10px 18px; border-radius: 12px; border: 1px solid #E2E8F0; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);">
+            <img src="assets/contetra-logo.png" alt="Contetra Private Limited Logo" class="login-contetra-logo">
+            <div style="border-left: 1px solid #CBD5E1; padding-left: 12px;">
+              <div style="font-size: 12px; font-weight: 800; color: #0F172A; line-height: 1.2;">Contetra Private Limited</div>
+              <div style="font-size: 10px; color: #0047FF; font-weight: 700; margin-top: 1px;">Official Platform Developer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form Column -->
+      <div class="login-form-side">
+        <div class="login-card">
+          <div class="login-card-meta">SECURE SIGN IN</div>
+          <h2 class="login-card-title">Access your workspace</h2>
+
+          <form id="login-form" onsubmit="event.preventDefault(); window.handleLoginSubmit();">
+            <div class="login-field-group">
+              <label class="login-field-label">WORK EMAIL</label>
+              <input type="email" id="login-input-email" class="login-field-input" placeholder="admin@compliance.in" value="admin@compliance.in" required>
+            </div>
+
+            <div class="login-field-group">
+              <label class="login-field-label">PASSWORD</label>
+              <input type="password" id="login-input-password" class="login-field-input" placeholder="••••••••" value="Admin@12345" required>
+            </div>
+
+            <button type="submit" class="login-submit-btn" id="btn-login-submit">
+              SIGN IN &rarr;
+            </button>
+          </form>
+
+          <!-- Demo Credentials Section -->
+          <div class="login-demo-box">
+            <div class="login-demo-header">DEMO CREDENTIALS (CLICK TO AUTO-FILL)</div>
+            
+            <div class="login-demo-item" onclick="window.fillDemoLogin('admin@compliance.in', 'Admin@12345')">
+              <span class="demo-role-badge">Super Admin</span>
+              <code>admin@compliance.in / Admin@12345</code>
+            </div>
+
+            <div class="login-demo-item" onclick="window.fillDemoLogin('manager@compliance.in', 'Test@12345')">
+              <span class="demo-role-badge">Manager</span>
+              <code>manager@compliance.in / Test@12345</code>
+            </div>
+
+            <button type="button" class="btn btn-outline" style="width: 100%; margin-top: 10px; font-weight: 800; font-size: 11px; height: 36px; border-color: var(--brand-blue); color: var(--brand-blue);" onclick="window.handleLoginSubmit();">⚡ ENTER PLATFORM DIRECTLY</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="app">
+    <!-- Left Navigation Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-container">
+          <div class="brand-logo-row">
+            <svg class="brand-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+            <span class="brand-title">COMPLYGRID</span>
+          </div>
+          <div class="brand-subtitle">
+            Statutory & Business Compliance Platform
+          </div>
+        </div>
+
+        <!-- Client Organization Selector (Enterprise Clean B2B SaaS Pattern) -->
+        <div style="margin-top: 14px;">
+          <label style="font-size: 9px; font-weight: 700; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase;">CLIENT ORGANIZATION</label>
+          <select class="input-select" id="global-entity-select" style="width: 100%; height: 32px; font-size: 11px; font-weight: 700; margin-top: 4px; border-color: #CBD5E1;">
+            <option value="ent-1">ANDRITZ Hydro Pvt Ltd (India HQ)</option>
+            <option value="ent-2">ANDRITZ Technologies & Systems Pvt Ltd</option>
+            <option value="ent-3">ANDRITZ Separation & Metals India Pvt Ltd</option>
+            <option value="manage-orgs-action" style="font-weight: 800; color: var(--brand-blue);">⚙️ Manage Organizations...</option>
+          </select>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" data-view="dashboard">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+          </svg>
+          Dashboard
+        </a>
+
+        <a class="nav-item" data-view="calendar">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Calendar
+        </a>
+
+        <a class="nav-item" data-view="tasks">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+          Tasks & Checklist
+        </a>
+
+        <a class="nav-item active" data-view="compliances">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="4" y1="21" x2="4" y2="14"/>
+            <line x1="4" y1="10" x2="4" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12" y2="3"/>
+            <line x1="20" y1="21" x2="20" y2="16"/>
+            <line x1="20" y1="12" x2="20" y2="3"/>
+            <line x1="1" y1="14" x2="7" y2="14"/>
+            <line x1="9" y1="8" x2="15" y2="8"/>
+            <line x1="17" y1="16" x2="23" y2="16"/>
+          </svg>
+          Compliances & Settings
+        </a>
+
+        <a class="nav-item" data-view="tat">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+          TAT & Performance
+        </a>
+
+        <a class="nav-item" data-view="team">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Team
+        </a>
+
+        <a class="nav-item" data-view="orgs">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 21h18"/>
+            <path d="M9 8h1"/>
+            <path d="M9 12h1"/>
+            <path d="M9 16h1"/>
+            <path d="M14 8h1"/>
+            <path d="M14 12h1"/>
+            <path d="M14 16h1"/>
+            <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/>
+          </svg>
+          Organizations
+        </a>
+
+        <a class="nav-item" data-view="notices">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          Notices & Legal
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile" style="margin-bottom: 14px;">
+          <div class="user-name">System Admin</div>
+          <div class="user-role">CLIENT ADMIN &bull; APEX INDUSTRIES</div>
+        </div>
+        <button class="btn-signout" id="btn-sign-out" style="margin-bottom: 16px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+          Sign Out
+        </button>
+
+        <!-- Developer Vendor Branding: Powered by Contetra Private Limited -->
+        <div style="border-top: 1px solid var(--border-color); padding-top: 14px; text-align: center;">
+          <div style="font-size: 8px; font-weight: 800; letter-spacing: 1.2px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">POWERED BY DEVELOPER</div>
+          <img src="assets/contetra-logo.png" alt="Contetra Private Limited Logo" style="width: 145px; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.05));">
+          <div style="font-size: 9px; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Contetra Private Limited</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Content -->
+    <main class="main-content">
+
+      <!-- View 1: Compliances & Settings -->
+      <section id="view-compliances" class="page-view active">
+        <header class="page-header">
+          <div>
+            <div class="header-meta">COMPLIANCE MASTER & SETTINGS</div>
+            <h1 class="page-title">Applicable Compliances & Reports</h1>
+            <p class="page-subtitle">Statutory filings plus internal Sales, HR, Finance, Operations and IT reporting. Switch off what does not apply, add your own custom items, and generate recurring calendar entries for any date range.</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn btn-primary" id="btn-add-custom-compliance">+ CUSTOM COMPLIANCE</button>
+          </div>
+        </header>
+
+        <!-- Date Range Calendar Generator Box -->
+        <div class="filter-bar">
+          <div class="filter-row">
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+              <span class="header-meta" style="margin: 0; font-weight: 800; color: var(--brand-navy);">GENERATE RECURRING ENTRIES FROM</span>
+              
+              <div class="custom-date-box" style="display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0 12px; height: 38px; cursor: pointer; transition: all 0.15s ease;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-blue)" stroke-width="2.2" style="flex-shrink: 0;">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                <select id="gen-from-date" class="date-select-input" style="border: none; background: transparent; padding: 0 4px; height: 100%; font-family: var(--font-main); font-size: 13px; font-weight: 700; color: var(--brand-navy); cursor: pointer; outline: none; appearance: none; -webkit-appearance: none;">
+                  <option value="2026-08" selected>August 2026</option>
+                  <option value="2026-09">September 2026</option>
+                  <option value="2026-10">October 2026</option>
+                  <option value="2026-11">November 2026</option>
+                  <option value="2026-12">December 2026</option>
+                  <option value="2027-01">January 2027</option>
+                  <option value="2027-02">February 2027</option>
+                  <option value="2027-03">March 2027</option>
+                  <option value="2027-04">April 2027</option>
+                  <option value="2027-05">May 2027</option>
+                  <option value="2027-06">June 2027</option>
+                  <option value="2027-07">July 2027</option>
+                  <option value="2027-08">August 2027</option>
+                </select>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" style="margin-left: 2px;">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+
+              <span class="header-meta" style="margin: 0; font-weight: 800; color: var(--brand-navy);">TO</span>
+
+              <div class="custom-date-box" style="display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0 12px; height: 38px; cursor: pointer; transition: all 0.15s ease;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-blue)" stroke-width="2.2" style="flex-shrink: 0;">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                <select id="gen-to-date" class="date-select-input" style="border: none; background: transparent; padding: 0 4px; height: 100%; font-family: var(--font-main); font-size: 13px; font-weight: 700; color: var(--brand-navy); cursor: pointer; outline: none; appearance: none; -webkit-appearance: none;">
+                  <option value="2026-08">August 2026</option>
+                  <option value="2026-09">September 2026</option>
+                  <option value="2026-10">October 2026</option>
+                  <option value="2026-11">November 2026</option>
+                  <option value="2026-12">December 2026</option>
+                  <option value="2027-01">January 2027</option>
+                  <option value="2027-02">February 2027</option>
+                  <option value="2027-03" selected>March 2027</option>
+                  <option value="2027-04">April 2027</option>
+                  <option value="2027-05">May 2027</option>
+                  <option value="2027-06">June 2027</option>
+                  <option value="2027-07">July 2027</option>
+                  <option value="2027-08">August 2027</option>
+                </select>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" style="margin-left: 2px;">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+
+              <button class="btn btn-outline" id="btn-generate-calendar">🔄 GENERATE CALENDAR</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Filter Bar -->
+        <div class="filter-bar">
+          <div class="filter-row" style="flex-wrap: wrap; gap: 12px;">
+            <div class="filter-tabs-group">
+              <button class="tab-btn filter-worktype-tab active" data-type="ALL">ALL</button>
+              <button class="tab-btn filter-worktype-tab" data-type="STATUTORY">STATUTORY</button>
+              <button class="tab-btn filter-worktype-tab" data-type="BUSINESS">BUSINESS</button>
+            </div>
+
+            <div class="filter-inputs-group" style="display: flex; align-items: center; gap: 8px; flex: 1;">
+              <select class="input-select" id="filter-category-select">
+                <option value="ALL">All categories</option>
+                <option value="GST">GST</option>
+                <option value="TDS/TCS">TDS/TCS</option>
+                <option value="Finance/MIS">Finance/MIS</option>
+                <option value="Sales">Sales</option>
+                <option value="HR">HR</option>
+                <option value="Operations">Operations</option>
+                <option value="IT & Admin">IT & Admin</option>
+                <option value="PF/ESI">PF/ESI</option>
+                <option value="Labour">Labour</option>
+              </select>
+
+              <input type="text" class="input-search" id="master-search-input" placeholder="Search master compliance or form code..." style="flex: 1;">
+            </div>
+
+            <div class="counter-badge" id="compliances-count-badge">29 OF 29 MARKED APPLICABLE</div>
+          </div>
+        </div>
+
+        <!-- Master Table -->
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 40px; text-align: center;"><input type="checkbox" class="custom-checkbox" id="master-toggle-all" title="Toggle All Rules Applicability" checked></th>
+                <th>COMPLIANCE</th>
+                <th>TYPE</th>
+                <th>CATEGORY</th>
+                <th>AUTHORITY</th>
+                <th>FORM</th>
+                <th>FREQUENCY</th>
+                <th>DUE DAY</th>
+                <th>DUE MONTHS</th>
+                <th>PREP LEAD</th>
+                <th>REVIEW LEAD</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody id="compliances-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- View 2: Tasks & Checklist -->
+      <section id="view-tasks" class="page-view">
+        <header class="page-header">
+          <div>
+            <div class="header-meta">CHECKLIST & ASSIGNMENTS</div>
+            <h1 class="page-title">Compliance & Business Tasks</h1>
+            <p class="page-subtitle">One register for statutory filings and internal Sales, HR, Finance, Ops and IT reporting. Assign a preparer and reviewer, set the date documents must be ready and reviewed, then move each item to filed.</p>
+          </div>
+          <div class="header-right-container">
+            <div class="header-actions-row">
+              <button class="btn btn-outline" id="btn-add-adhoc-task">+ AD-HOC TASK</button>
+              <button class="btn btn-primary btn-export-csv">
+                <svg class="btn-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                EXPORT CSV
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Tasks Filter Bar -->
+        <div class="filter-bar">
+          <div class="filter-row" style="flex-wrap: wrap; gap: 12px;">
+            <div class="filter-tabs-group">
+              <button class="tab-btn filter-worktype-tab active" data-type="ALL">ALL WORK</button>
+              <button class="tab-btn filter-worktype-tab" data-type="STATUTORY">STATUTORY</button>
+              <button class="tab-btn filter-worktype-tab" data-type="BUSINESS">BUSINESS (SALES/HR/OPS)</button>
+            </div>
+
+            <div class="filter-tabs-group">
+              <button class="tab-btn tab-btn-pill filter-scope-tab active" data-scope="ALL">ALL</button>
+              <button class="tab-btn tab-btn-pill filter-scope-tab" data-scope="UPCOMING 30D">UPCOMING 30D</button>
+              <button class="tab-btn tab-btn-pill filter-scope-tab" data-scope="OVERDUE">OVERDUE</button>
+              <button class="tab-btn tab-btn-pill filter-scope-tab" data-scope="MY TASKS">MY TASKS</button>
+            </div>
+
+            <div class="filter-inputs-group" style="display: flex; align-items: center; gap: 8px; flex: 1;">
+              <select class="form-input" id="filter-category-select" style="width: auto; padding: 6px 12px; font-size: 11px; font-weight: 700;">
+                <option value="ALL">All Categories</option>
+                <option value="GST">GST</option>
+                <option value="TDS/TCS">TDS/TCS</option>
+                <option value="PF/ESI">PF/ESI</option>
+                <option value="Labour">Labour</option>
+                <option value="HR">HR</option>
+                <option value="Finance/MIS">Finance/MIS</option>
+                <option value="IT & Admin">IT & Admin</option>
+                <option value="Operations">Operations</option>
+              </select>
+
+              <select class="form-input" id="filter-status-select" style="width: auto; padding: 6px 12px; font-size: 11px; font-weight: 700;">
+                <option value="ALL">All Statuses</option>
+                <option value="PENDING">Pending</option>
+                <option value="DOCS READY">Docs Ready</option>
+                <option value="IN REVIEW">In Review</option>
+                <option value="FILED">Filed</option>
+              </select>
+
+              <input type="text" class="input-search" id="filter-search-input" placeholder="Search compliance..." style="flex: 1;">
+            </div>
+
+            <div class="counter-badge" id="tasks-count-badge">209 TASKS</div>
+          </div>
+        </div>
+
+        <!-- Tasks Register Table -->
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 30px;"></th>
+                <th>COMPLIANCE</th>
+                <th>CATEGORY</th>
+                <th>PERIOD</th>
+                <th>DOCS READY BY</th>
+                <th>REVIEW BY</th>
+                <th>DUE DATE</th>
+                <th>STATUS</th>
+                <th>HEALTH</th>
+                <th>PREPARER</th>
+                <th>REVIEWER</th>
+                <th>DELAY OWNER</th>
+              </tr>
+            </thead>
+            <tbody id="tasks-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- View 3: Calendar -->
+      <section id="view-calendar" class="page-view">
+        <header class="page-header">
+          <div>
+            <div class="header-meta">COMPLIANCE CALENDAR</div>
+            <h1 class="page-title" id="calendar-month-title">August 2026</h1>
+            <p class="page-subtitle">Statutory due dates plotted by day. Red marks overdue, amber marks items due within a week.</p>
+          </div>
+          <div class="header-right-container">
+            <!-- Developer Badge Alignment -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 9px; font-weight: 800; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase;">DEVELOPER</span>
+              <img src="assets/contetra-logo.png" alt="Contetra Private Limited Logo" style="width: 105px; height: auto; display: block;">
+            </div>
+
+            <!-- Perfectly Aligned Controls Row -->
+            <div class="header-actions-row">
+              <button class="btn btn-outline btn-icon-only" id="btn-prev-month" title="Previous Month">
+                <svg class="btn-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="btn btn-outline" id="btn-today-month">TODAY</button>
+              <button class="btn btn-outline btn-icon-only" id="btn-next-month" title="Next Month">
+                <svg class="btn-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+              <button class="btn btn-primary btn-export-csv">
+                <svg class="btn-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                EXPORT CSV
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <div class="calendar-grid">
+          <div class="calendar-header-row">
+            <div class="calendar-day-header">MON</div>
+            <div class="calendar-day-header">TUE</div>
+            <div class="calendar-day-header">WED</div>
+            <div class="calendar-day-header">THU</div>
+            <div class="calendar-day-header">FRI</div>
+            <div class="calendar-day-header">SAT</div>
+            <div class="calendar-day-header">SUN</div>
+          </div>
+          <div class="calendar-days-grid" id="calendar-days-grid">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- View 4: TAT & Performance -->
+      <section id="view-tat" class="page-view">
+        <header class="page-header">
+          <div>
+            <div class="header-meta">TAT & PERFORMANCE</div>
+            <h1 class="page-title">Who is holding it up?</h1>
+            <p class="page-subtitle">Turnaround times, delay attribution by person and category, and month-on-month filing performance.</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn btn-primary btn-export-csv">📥 EXPORT FULL REGISTER</button>
+          </div>
+        </header>
+
+        <div class="dashboard-grid">
+          <!-- Month on Month Line Chart -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-subtitle">MONTH ON MONTH</div>
+              <h2 class="card-title">Filed vs late vs overdue</h2>
+            </div>
+            <div class="chart-box" id="trend-chart-box">
+              <!-- SVG chart rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Delay Hotspots Bar Chart -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-subtitle">DELAY HOTSPOTS</div>
+              <h2 class="card-title">Delays by category</h2>
+            </div>
+            <div class="chart-box" id="hotspots-chart-box">
+              <!-- SVG chart rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Scorecard Table -->
+        <div style="margin-bottom: 36px;">
+          <div class="card-header">
+            <div class="card-subtitle">TEAM SCORECARD</div>
+            <h2 class="card-title">Performance & delay attribution</h2>
+          </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>MEMBER</th>
+                  <th>ROLE</th>
+                  <th>ASSIGNED</th>
+                  <th>FILED</th>
+                  <th>PREP DELAYS</th>
+                  <th>REVIEW DELAYS</th>
+                  <th>TOTAL DELAYS</th>
+                  <th>ON-TIME %</th>
+                  <th>AVG TAT (DAYS)</th>
+                </tr>
+              </thead>
+              <tbody id="team-scorecard-body">
+                <!-- Rendered via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Breach Register Table -->
+        <div>
+          <div class="card-header">
+            <div class="card-subtitle">BREACH REGISTER</div>
+            <h2 class="card-title">Delayed items</h2>
+          </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>DUE DATE</th>
+                  <th>COMPLIANCE</th>
+                  <th>PERIOD</th>
+                  <th>HEALTH</th>
+                  <th>DELAY OWNER</th>
+                  <th>REASON</th>
+                </tr>
+              </thead>
+              <tbody id="breach-register-body">
+                <!-- Rendered via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 5: Team -->
+      <section id="view-team" class="page-view">
+        <header class="page-header">
+          <div>
+            <div class="header-meta">TEAM & ACCESS</div>
+            <h1 class="page-title">Compliance Team</h1>
+            <p class="page-subtitle">Admins and managers assign work; preparers get documents ready; reviewers approve before filing.</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn btn-primary" id="btn-add-member-modal">+ ADD MEMBER</button>
+          </div>
+        </header>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>ROLE</th>
+                <th>STATUS</th>
+                <th>ADDED</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody id="team-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- View 6: Dashboard (Compliance Command Centre) -->
+      <section id="view-dashboard" class="page-view">
+        <header class="page-header">
+          <div>
+            <div class="header-meta">WELCOME, SYSTEM ADMIN</div>
+            <h1 class="page-title">Compliance Command Centre</h1>
+            <p class="page-subtitle">Live status of every statutory filing — prep targets, review targets, filing due dates and who is holding things up.</p>
+          </div>
+          <div class="header-actions">
+            <div class="badge-live">
+              <span class="badge-live-dot"></span> LIVE
+            </div>
+            <button class="btn btn-outline" id="btn-dash-refresh">🔄 REFRESH</button>
+          </div>
+        </header>
+
+        <!-- Sync Meta Bar -->
+        <div class="sync-meta-bar" id="dash-sync-bar">
+          LAST SYNC 4:02:54 PM &bull; 415 TRACKED FILINGS
+        </div>
+
+        <!-- 8-KPI Summary Grid -->
+        <div class="kpi-summary-grid">
+          <!-- Row 1 -->
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-title">OVERDUE</span>
+              <svg class="kpi-icon red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <div class="kpi-value" id="kpi-val-overdue">139</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-title">DUE IN 7 DAYS</span>
+              <svg class="kpi-icon orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="kpi-value" id="kpi-val-duesoon">6</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-title">MY OPEN TASKS</span>
+              <svg class="kpi-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="kpi-value" id="kpi-val-mytasks">1</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-title">FILED</span>
+              <svg class="kpi-icon green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div class="kpi-value" id="kpi-val-filed">9</div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-title">ON-TIME FILING RATE</span>
+            </div>
+            <div class="kpi-value" id="kpi-val-ontime">0%</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-title">FILED LATE</span>
+            </div>
+            <div class="kpi-value" id="kpi-val-filedlate">9</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-title">PREP DELAYS</span>
+            </div>
+            <div class="kpi-value" id="kpi-val-prepdelays">149</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-title">REVIEW DELAYS</span>
+            </div>
+            <div class="kpi-value" id="kpi-val-reviewdelays">149</div>
+          </div>
+        </div>
+
+        <!-- 3-Column Task Feed Cards -->
+        <div class="dash-columns-3grid">
+          <!-- Column 1: Overdue -->
+          <div class="column-card">
+            <div class="column-header">
+              <span class="column-title">OVERDUE &mdash; ACT NOW</span>
+              <a class="column-link" onclick="window.filterDashInPage('OVERDUE')">VIEW ALL</a>
+            </div>
+            <div class="dash-task-list" id="dash-col-overdue">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Column 2: Next 30 Days -->
+          <div class="column-card">
+            <div class="column-header">
+              <span class="column-title">NEXT 30 DAYS</span>
+              <a class="column-link" onclick="window.filterDashInPage('DUE IN 7 DAYS')">VIEW ALL</a>
+            </div>
+            <div class="dash-task-list" id="dash-col-next30">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Column 3: Assigned to Me -->
+          <div class="column-card">
+            <div class="column-header">
+              <span class="column-title">ASSIGNED TO ME</span>
+              <a class="column-link" onclick="window.filterDashInPage('MY TASKS')">VIEW ALL</a>
+            </div>
+            <div class="dash-task-list" id="dash-col-assigned">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- In-Page Live Filtered Results Section (Placed Below 3-Columns when Deselected) -->
+        <div id="dash-inpage-results-section" style="margin-top: 36px; margin-bottom: 36px;">
+          <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+            <div>
+              <div class="card-subtitle" id="dash-inpage-filter-meta">LIVE IN-PAGE RESULTS REGISTER</div>
+              <h2 class="card-title" id="dash-inpage-filter-title">All Statutory & Business Filings (209 Tracked)</h2>
+            </div>
+            <div class="filter-tabs-group" id="dash-inpage-filter-tabs">
+              <button class="tab-btn filter-inpage-tab active" data-filter="ALL">ALL (209)</button>
+              <button class="tab-btn filter-inpage-tab" data-filter="OVERDUE">OVERDUE (21)</button>
+              <button class="tab-btn filter-inpage-tab" data-filter="DUE IN 7 DAYS">DUE IN 7 DAYS (9)</button>
+              <button class="tab-btn filter-inpage-tab" data-filter="MY TASKS">MY TASKS (5)</button>
+              <button class="tab-btn filter-inpage-tab" data-filter="FILED">FILED (3)</button>
+              <button class="tab-btn filter-inpage-tab" data-filter="PREP DELAYS">PREP DELAYS (16)</button>
+              <button class="tab-btn filter-inpage-tab" data-filter="REVIEW DELAYS">REVIEW DELAYS (5)</button>
+            </div>
+          </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="width: 30px;"></th>
+                  <th>COMPLIANCE</th>
+                  <th>CATEGORY</th>
+                  <th>PERIOD</th>
+                  <th>DOCS READY BY</th>
+                  <th>REVIEW BY</th>
+                  <th>DUE DATE</th>
+                  <th>STATUS</th>
+                  <th>HEALTH</th>
+                  <th>PREPARER</th>
+                  <th>REVIEWER</th>
+                  <th>DELAY OWNER</th>
+                </tr>
+              </thead>
+              <tbody id="dash-inpage-table-body">
+                <!-- Rendered live via JS on the same page -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Category Load Chart & Live Activity Feed -->
+        <div class="dashboard-grid">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-subtitle">LOAD BY CATEGORY</div>
+              <h2 class="card-title">Filings vs overdue</h2>
+            </div>
+            <div class="chart-box" id="dashboard-chart-box">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-subtitle">⚡ LIVE ACTIVITY</div>
+              <h2 class="card-title">System Audit Log</h2>
+            </div>
+            <div class="activity-feed" id="dashboard-activity-feed">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 8: Client Organizations Management -->
+      <section id="view-orgs" class="page-view">
+        <header class="page-header">
+          <div>
+            <div class="header-meta">SUPER ADMIN PLATFORM CONTROL</div>
+            <h1 class="page-title">Client Organizations</h1>
+            <p class="page-subtitle">Manage client group companies, GSTIN / Tax Registration details, primary compliance leads, and active status.</p>
+          </div>
+          <div class="header-right-container">
+            <div class="header-actions-row">
+              <button class="btn btn-primary" id="btn-open-add-org-modal">+ ADD CLIENT ORGANIZATION</button>
+            </div>
+          </div>
+        </header>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ORGANIZATION NAME</th>
+                <th>ENTITY CODE</th>
+                <th>PRIMARY TAX REGISTRATION (GSTIN / TAN)</th>
+                <th>COMPLIANCE LEAD</th>
+                <th>STATUS</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody id="orgs-page-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- View 7: Notices & Legal -->
+      <section id="view-notices" class="page-view">
+        <header class="page-header">
+          <div>
+            <div class="header-meta">STATUTORY NOTICE TRACKER</div>
+            <h1 class="page-title">Notices & Legal Hearings</h1>
+            <p class="page-subtitle">Track department notices (GST, Income Tax, EPFO, ROC), reply deadlines, assigned tax counsels, and hearing dates.</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn btn-primary" id="btn-add-notice">+ RECORD NEW NOTICE</button>
+          </div>
+        </header>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>REF NO / NOTICE NO</th>
+                <th>AUTHORITY / DEPT</th>
+                <th>SUBJECT / SECTION</th>
+                <th>ISSUE DATE</th>
+                <th>REPLY DUE DATE</th>
+                <th>STATUS</th>
+                <th>ASSIGNED COUNSEL</th>
+                <th>PROOF / DRAFT</th>
+              </tr>
+            </thead>
+            <tbody id="notices-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- AI Co-Pilot Floating Action Button (Light & Minimal Design) -->
+  <button class="ai-copilot-fab" id="btn-ai-copilot" title="Ask Contetra AI Compliance Co-Pilot">
+    <div class="fab-icon-glow">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0047FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        <circle cx="12" cy="12" r="4" fill="#0047FF"/>
+      </svg>
+    </div>
+    <span class="fab-label">Ask AI Co-Pilot</span>
+    <span class="fab-pulse-dot"></span>
+  </button>
+
+  <!-- AI Co-Pilot Interactive Chatbot Drawer (Light & Minimal UI/UX) -->
+  <div class="ai-drawer-overlay" id="ai-drawer-overlay">
+    <div class="ai-drawer-card">
+      <div class="ai-drawer-header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="ai-avatar-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0047FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <h3 style="font-family: var(--font-heading); font-size: 15px; font-weight: 800; color: #0F172A; margin: 0;">Contetra AI Co-Pilot</h3>
+              <span style="font-size: 9px; font-weight: 800; background: #EFF6FF; color: #0047FF; padding: 2px 8px; border-radius: 10px; border: 1px solid #BFDBFE;">PRO 2.0</span>
+            </div>
+            <div style="font-size: 10px; color: #64748B; font-weight: 600; display: flex; align-items: center; gap: 6px; margin-top: 2px;">
+              <span class="status-indicator-dot"></span>
+              ONLINE &bull; Statutory Tax & Legal Intelligence
+            </div>
+          </div>
+        </div>
+        <button class="drawer-close" id="btn-close-ai-drawer" style="color: #64748B;">&times;</button>
+      </div>
+
+      <!-- Quick Prompt Chips Carousel -->
+      <div class="ai-chips-bar">
+        <button class="ai-prompt-chip" data-prompt="Explain Section 234E TDS late fee penalty formula">⚖️ Sec 234E TDS Fee</button>
+        <button class="ai-prompt-chip" data-prompt="What is the Section 47 GST late fee per day?">🏛️ Sec 47 GST Penalty</button>
+        <button class="ai-prompt-chip" data-prompt="Generate GSTR-3B vs 2A audit checklist">📋 GSTR-3B Checklist</button>
+        <button class="ai-prompt-chip" data-prompt="Draft a formal reply for GST DRC-01 show cause notice">📄 DRC-01 Reply Draft</button>
+      </div>
+
+      <!-- Chat Messages Container -->
+      <div class="ai-chat-body" id="ai-chat-messages">
+        <div class="chat-bubble ai-msg">
+          <div class="chat-sender">
+            <span>✨ CONTETRA AI CO-PILOT</span>
+            <span style="font-size: 9px; opacity: 0.6; color: #64748B;">Just now</span>
+          </div>
+          Welcome! I am your <strong>Contetra Statutory Compliance & Tax AI Assistant</strong>.<br>Ask me any question regarding GST (GSTR-3B/1), TDS/TCS (Sec 234E), Income Tax, EPFO, ESIC, ROC filings, or audit checklists!
+        </div>
+      </div>
+
+      <!-- Chat Input Controls -->
+      <div class="ai-chat-footer">
+        <div class="ai-input-wrapper">
+          <input type="text" class="ai-chat-input" id="ai-chat-input-text" placeholder="Ask AI a tax question or formula (e.g. Sec 234E)..." autocomplete="off">
+          <button class="btn-ai-send" id="btn-send-ai-chat" title="Send Question">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 10px; color: #94A3B8;">
+          <span>Powered by Contetra Legal AI Engine</span>
+          <span>Press <strong>Enter ↵</strong> to send</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-Over Task Details Drawer -->
+  <div class="drawer-backdrop" id="task-drawer-backdrop">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div>
+          <div class="drawer-category-tag" id="drawer-category">SALES &bull; SALES HEAD</div>
+          <h2 class="drawer-title" id="drawer-title">Daily Sales & Collection Report</h2>
+          <div class="drawer-code-tag" id="drawer-code-tag">APR 2026 &bull; FORM MIS</div>
+        </div>
+        <button class="drawer-close" id="drawer-close-btn">&times;</button>
+      </div>
+
+      <div class="drawer-body">
+        <!-- 2-Col Key Metrics -->
+        <div class="metrics-grid-2col">
+          <div class="metric-item-block">
+            <span class="metric-label">FILING DUE</span>
+            <span class="metric-val" id="drawer-filing-due">01 May 2026</span>
+          </div>
+          <div class="metric-item-block">
+            <span class="metric-label">DAYS LEFT</span>
+            <span class="metric-val metric-val-overdue" id="drawer-days-left">-120</span>
+          </div>
+
+          <div class="metric-item-block">
+            <span class="metric-label">DOCS READY TARGET</span>
+            <span class="metric-val" id="drawer-docs-target">30 Apr at 11:30 PM</span>
+          </div>
+          <div class="metric-item-block">
+            <span class="metric-label">REVIEW TARGET</span>
+            <span class="metric-val" id="drawer-review-target">30 Apr at 11:30 PM</span>
+          </div>
+
+          <div class="metric-item-block">
+            <span class="metric-label">DOCS READY AT</span>
+            <span class="metric-val" id="drawer-docs-ready-at">28 Aug at 04:51 PM</span>
+          </div>
+          <div class="metric-item-block">
+            <span class="metric-label">REVIEWED AT</span>
+            <span class="metric-val" id="drawer-reviewed-at">28 Aug at 04:51 PM</span>
+          </div>
+
+          <div class="metric-item-block">
+            <span class="metric-label">FILED AT</span>
+            <span class="metric-val" id="drawer-filed-at">28 Aug at 04:51 PM</span>
+          </div>
+          <div class="metric-item-block">
+            <span class="metric-label">DELAY OWNER</span>
+            <span class="metric-val metric-val-overdue" id="drawer-delay-owner">System Admin</span>
+          </div>
+        </div>
+
+        <!-- Statutory Penalty & Late Fee Estimator Banner -->
+        <div id="drawer-penalty-box" style="background: #FEF2F2; border: 1px solid #FCA5A5; border-radius: var(--radius-sm); padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <div style="font-size: 10px; font-weight: 700; letter-spacing: 1px; color: #991B1B; text-transform: uppercase;">ESTIMATED STATUTORY LATE FEE & INTEREST</div>
+            <div style="font-size: 11px; color: #B91C1C; margin-top: 2px;" id="drawer-penalty-text">Section 47 / 234E Penalty: ₹6,000 + Interest @18% p.a.</div>
+          </div>
+          <div style="font-family: var(--font-heading); font-size: 18px; font-weight: 800; color: #DC2626;" id="drawer-penalty-val">₹6,000</div>
+        </div>
+
+        <!-- 5-State Status Selection Matrix -->
+        <div class="form-group">
+          <label class="form-label">STATUS</label>
+          <div class="status-matrix-grid">
+            <button class="matrix-btn" data-status="PENDING">PENDING</button>
+            <button class="matrix-btn" data-status="DOCS READY">DOCS READY</button>
+            <button class="matrix-btn" data-status="IN REVIEW">IN REVIEW</button>
+            <button class="matrix-btn" data-status="FILED">FILED</button>
+            <button class="matrix-btn matrix-btn-full" data-status="NOT APPLICABLE">NOT APPLICABLE</button>
+          </div>
+        </div>
+
+        <!-- Assignees Selection -->
+        <div class="form-group">
+          <label class="form-label">PREPARER</label>
+          <select class="form-select" id="drawer-preparer-select">
+            <!-- Options populated via JS -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">REVIEWER</label>
+          <select class="form-select" id="drawer-reviewer-select">
+            <!-- Options populated via JS -->
+          </select>
+        </div>
+
+        <!-- Working File Link Input (User Requirement) -->
+        <div class="form-group">
+          <label class="form-label">WORKING FILE LINK (STAKEHOLDER REVIEW)</label>
+          <div class="link-input-group">
+            <input type="url" class="form-input" id="drawer-link-input" placeholder="Paste Google Drive / OneDrive / SharePoint URL">
+            <a class="btn-open-link" id="drawer-open-link-btn" target="_blank" rel="noopener noreferrer" style="display: none;">🔗 Open Link</a>
+          </div>
+        </div>
+
+        <!-- Proof of Filing & Challan Details -->
+        <div class="form-group" style="background: #F8FAFC; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px; gap: 10px;">
+          <label class="form-label" style="color: var(--brand-navy);">PROOF OF FILING / CHALLAN RECEIPT</label>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div>
+              <label class="form-label" style="font-size: 9px;">ARN / ACK / CIN / BSR NO</label>
+              <input type="text" class="form-input" id="drawer-ack-no" placeholder="e.g. AA2708261234567">
+            </div>
+            <div>
+              <label class="form-label" style="font-size: 9px;">ACTUAL FILING DATE</label>
+              <input type="date" class="form-input" id="drawer-actual-file-date">
+            </div>
+          </div>
+          <div>
+            <label class="form-label" style="font-size: 9px;">PROOF ATTACHMENT URL / DRIVE LINK</label>
+            <input type="url" class="form-input" id="drawer-proof-file-url" placeholder="Paste Challan / Acknowledgement PDF link">
+          </div>
+        </div>
+
+        <!-- Mandatory Remarks Input (User Requirement) -->
+        <div class="form-group">
+          <label class="form-label required">REMARKS (MANDATORY TO VERIFY REVIEW)</label>
+          <textarea class="form-textarea" id="drawer-remarks-input" placeholder="Enter review confirmation notes, document verification status, or audit details..."></textarea>
+        </div>
+
+        <!-- Delay Reason Input -->
+        <div class="form-group">
+          <label class="form-label">DELAY REASON (IF BREACHED)</label>
+          <textarea class="form-textarea" id="drawer-delay-reason-input" placeholder="Enter reason for delay or SLA breach..."></textarea>
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <button class="btn-save-drawer" id="btn-save-drawer">SAVE NOTES</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Add Team Member -->
+  <div class="modal-overlay" id="modal-add-member">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Add Team Member</h3>
+        <button class="drawer-close" id="btn-close-member-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label required">FULL NAME</label>
+          <input type="text" class="form-input" id="new-member-name" placeholder="e.g. Vikram Sharma">
+        </div>
+        <div class="form-group">
+          <label class="form-label required">EMAIL ADDRESS</label>
+          <input type="email" class="form-input" id="new-member-email" placeholder="e.g. vikram@compliance.in">
+        </div>
+        <div class="form-group">
+          <label class="form-label">ROLE</label>
+          <select class="form-select" id="new-member-role">
+            <option value="preparer">Preparer</option>
+            <option value="reviewer">Reviewer</option>
+            <option value="manager">Manager</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="document.getElementById('modal-add-member').classList.remove('open')">Cancel</button>
+        <button class="btn btn-primary" id="btn-save-member">Add Member</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Edit / Add Master Compliance Rule -->
+  <div class="modal-overlay" id="modal-edit-master-compliance">
+    <div class="modal-card" style="width: 620px;">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="master-modal-heading">Edit Master Compliance Settings</h3>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Configure statutory frequency, due dates, and lead times</div>
+        </div>
+        <button class="drawer-close" id="btn-close-master-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="master-edit-id">
+        <div class="form-group">
+          <label class="form-label required">COMPLIANCE TITLE</label>
+          <input type="text" class="form-input" id="master-edit-title" placeholder="e.g. GSTR-3B (Monthly Summary Return & Payment)">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label required">FORM / CODE</label>
+            <input type="text" class="form-input" id="master-edit-code" placeholder="e.g. GSTR-3B">
+          </div>
+          <div class="form-group">
+            <label class="form-label">TYPE</label>
+            <select class="form-select" id="master-edit-type">
+              <option value="STATUTORY">STATUTORY</option>
+              <option value="BUSINESS">BUSINESS</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label">CATEGORY</label>
+            <select class="form-select" id="master-edit-category">
+              <option value="GST">GST</option>
+              <option value="TDS/TCS">TDS/TCS</option>
+              <option value="Income Tax">Income Tax</option>
+              <option value="Finance/MIS">Finance/MIS</option>
+              <option value="Sales">Sales</option>
+              <option value="HR">HR</option>
+              <option value="Operations">Operations</option>
+              <option value="IT & Admin">IT & Admin</option>
+              <option value="PF/ESI">PF/ESI</option>
+              <option value="Labour">Labour</option>
+              <option value="ROC/MCA">ROC/MCA</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">AUTHORITY / DEPT</label>
+            <input type="text" class="form-input" id="master-edit-authority" placeholder="e.g. GST Dept / Income Tax">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label">FREQUENCY</label>
+            <select class="form-select" id="master-edit-frequency">
+              <option value="Monthly">Monthly</option>
+              <option value="Quarterly">Quarterly</option>
+              <option value="Annual">Annual</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label required">DUE DAY OF MONTH</label>
+            <input type="number" class="form-input" id="master-edit-dueday" min="1" max="31" value="20">
+          </div>
+          <div class="form-group">
+            <label class="form-label">DUE MONTHS</label>
+            <input type="text" class="form-input" id="master-edit-months" placeholder="e.g. Every month or Mar">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label required">PREP LEAD TIME (DAYS)</label>
+            <input type="number" class="form-input" id="master-edit-preplead" min="1" max="60" value="10">
+          </div>
+          <div class="form-group">
+            <label class="form-label required">REVIEW LEAD TIME (DAYS)</label>
+            <input type="number" class="form-input" id="master-edit-reviewlead" min="1" max="30" value="5">
+          </div>
+        </div>
+
+        <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px;">
+          <input type="checkbox" class="custom-checkbox" id="master-edit-applicable" checked>
+          <label for="master-edit-applicable" style="font-weight: 700; color: var(--brand-navy); cursor: pointer;">Mark as Applicable for Organization</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="btn-delete-master-rule" style="color: #DC2626; border-color: #FCA5A5; margin-right: auto; display: none;">Delete Rule</button>
+        <button class="btn btn-outline" onclick="document.getElementById('modal-edit-master-compliance').classList.remove('open')">Cancel</button>
+        <button class="btn btn-primary" id="btn-save-master-rule">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Super Admin Manage Client Organizations -->
+  <div class="modal-overlay" id="modal-manage-orgs">
+    <div class="modal-card" style="width: 580px;">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">Manage Client Organizations</h3>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Super Admin Privileges &bull; Contetra Platform Control</div>
+        </div>
+        <button class="drawer-close" id="btn-close-orgs-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="font-size: 11px; font-weight: 700; color: var(--brand-navy); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 8px;">EXISTING ORGANIZATIONS</div>
+        <div id="orgs-edit-list" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+          <!-- Populated via JS -->
+        </div>
+
+        <div style="border-top: 1px solid var(--border-color); padding-top: 16px;">
+          <div style="font-size: 11px; font-weight: 700; color: var(--brand-navy); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 8px;">ADD NEW CLIENT ORGANIZATION</div>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" class="form-input" id="new-org-name-input" placeholder="e.g. Zenith Global Enterprises Ltd">
+            <button class="btn btn-primary" id="btn-add-new-org">+ ADD</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="document.getElementById('modal-manage-orgs').classList.remove('open')">Cancel</button>
+        <button class="btn btn-primary" id="btn-save-orgs-list">Save Organization Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Day Compliance Summary Modal -->
+  <div class="modal-overlay" id="modal-day-tasks">
+    <div class="modal-card" style="width: 580px;">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="day-modal-title">Compliance Filings Due</h3>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;" id="day-modal-subtitle">Scheduled Statutory & Business Filings</div>
+        </div>
+        <button class="drawer-close" onclick="document.getElementById('modal-day-tasks').classList.remove('open')">&times;</button>
+      </div>
+      <div class="modal-body" id="day-modal-body" style="max-height: 400px; overflow-y: auto;">
+        <!-- Populated via JS -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="document.getElementById('modal-day-tasks').classList.remove('open')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
